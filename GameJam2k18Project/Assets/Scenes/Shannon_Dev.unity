@@ -1004,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eefa52ef76141149965e50c05f31e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boltJump: {fileID: 1034081794647482, guid: c1a99b5e26814184bba00e478af1268e, type: 2}
   playerTransform: {fileID: 0}
   jumpRangeLimit: 5
   rangeUpgradeLevel: 1

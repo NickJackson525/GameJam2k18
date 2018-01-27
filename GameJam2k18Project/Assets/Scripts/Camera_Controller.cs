@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Camera_Controller : MonoBehaviour
 {
-
-  [SerializeField] Transform playerTransform;
+  [SerializeField] GameObject boltJump;
   [SerializeField] float jumpRangeLimit = 5f;
   [SerializeField] int rangeUpgradeLevel = 0, delayUpgradeLevel = 0;
+  Transform playerTransform;
   int[] rangeUpgrades = { 0, 3, 6, 9, 12 };
   float[] delayUpgrades = { 0f, .05f, .15f, .25f, .4f };
 
@@ -87,6 +87,9 @@ public class Camera_Controller : MonoBehaviour
   {
     chargingJump = true;
     yield return new WaitForSeconds(.8f - delayUpgrades[delayUpgradeLevel]);
+    GameObject obj = Instantiate(boltJump, playerTransform.position, Quaternion.identity);
+    obj.GetComponent<LineRenderer>().positionCount = 3;
+    obj.GetComponent<LineRenderer>().SetPositions(new Vector3[] { playerTransform.position, Vector3.Lerp(playerTransform.position, target.position, .5f) , target.position });
     playerTransform = target;
     chargingJump = false;
   }
