@@ -24,10 +24,54 @@ public class Camera_Controller : MonoBehaviour
     {
       Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
       RaycastHit2D inf = Physics2D.Raycast(r.origin, r.direction);
-      if (!chargingJump && inf.transform != null && (inf.transform.tag == "WifiPoint" || inf.transform.tag == "Start") && Vector2.Distance(inf.transform.position, playerTransform.position) < jumpRangeLimit + rangeUpgrades[rangeUpgradeLevel])
+      if (!chargingJump && inf.transform != null && (inf.transform.tag == "WifiPoint" || inf.transform.tag == "Start" || inf.transform.tag == "Wires") && Vector2.Distance(inf.transform.position, playerTransform.position) < jumpRangeLimit + rangeUpgrades[rangeUpgradeLevel])
       {
-        print("Jumping to " + inf.transform.name);
-        StartCoroutine(ChargeJump(inf.transform));
+        if (playerTransform.tag != "Wires" || playerTransform.transform.GetComponent<Wiring_Script>().GetNeighborCount() == 1)
+        {
+          StartCoroutine(ChargeJump(inf.transform));
+        }
+        else
+        {
+          print("Can't jump from mid cable!");
+        }
+      }
+    }
+    else if (playerTransform.tag == "Wires")
+    {
+      if (Input.GetKeyDown(KeyCode.W))
+      {
+        Transform t = playerTransform.GetComponent<Wiring_Script>().GetNeighbor("top");
+        if (t != null)
+        {
+          playerTransform = t;
+        }
+      }
+      if (Input.GetKeyDown(KeyCode.S))
+      {
+        Transform t = playerTransform.GetComponent<Wiring_Script>().GetNeighbor("bottom");
+        if (t != null)
+        {
+          playerTransform = t;
+        }
+
+      }
+      if (Input.GetKeyDown(KeyCode.D))
+      {
+        Transform t = playerTransform.GetComponent<Wiring_Script>().GetNeighbor("right");
+        if (t != null)
+        {
+          playerTransform = t;
+        }
+
+      }
+      if (Input.GetKeyDown(KeyCode.A))
+      {
+        Transform t = playerTransform.GetComponent<Wiring_Script>().GetNeighbor("left");
+        if (t != null)
+        {
+          playerTransform = t;
+        }
+
       }
     }
   }
@@ -43,7 +87,6 @@ public class Camera_Controller : MonoBehaviour
   {
     chargingJump = true;
     yield return new WaitForSeconds(.8f - delayUpgrades[delayUpgradeLevel]);
-    print("Charging to " + target.name);
     playerTransform = target;
     chargingJump = false;
   }
