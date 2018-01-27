@@ -18,7 +18,10 @@ public class TankController : Robot
 	// Update is called once per frame
 	void Update()
     {
-        MoveLeftRight();
+        if (isSelected)
+        {
+            MoveLeftRight();
+        }
     }
 
     //grounded checking

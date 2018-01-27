@@ -56,4 +56,14 @@ public class Robot : MonoBehaviour
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpHeight);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Player" && gameObject.tag != "Player")
+        {
+            Destroy(coll.gameObject);
+            gameObject.tag = "Player";
+            isSelected = true;
+        }
+    }
 }
