@@ -42,6 +42,7 @@ public class Turret : Robot
     private float rotZ = 0; // z rotation
     private int rotLeft = 0;
     private int rotRight = 0;
+    private IEnumerator coroutine;
     #endregion
 
     #region Methods - MonoBehaviour
@@ -50,7 +51,8 @@ public class Turret : Robot
         sprite = this.gameObject.GetComponent<SpriteRenderer>();
         if(!isSelected)
         {
-            StartCoroutine(FireRoutine());
+            coroutine = FireRoutine();
+            StartCoroutine(coroutine);
         }
     }
 
@@ -58,6 +60,7 @@ public class Turret : Robot
     {
         if(isSelected)
         {
+            StopCoroutine(coroutine);
             // mouse logic
             if(Input.GetKey(KeyCode.A))
             {
