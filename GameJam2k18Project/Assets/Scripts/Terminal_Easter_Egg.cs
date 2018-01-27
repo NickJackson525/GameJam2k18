@@ -23,6 +23,12 @@ public class Terminal_Easter_Egg : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            burningTeddyBool = true;
+        }
+
         //changes opacity of dr T for a set period of time
         if (burningTeddyBool == true)
         {
@@ -37,16 +43,13 @@ public class Terminal_Easter_Egg : MonoBehaviour {
                 if (drTOpacity.alpha <= 0)
                 {
                     burningTeddyBool = false;
+                    timeChange = 0f;
                 }
             }
         }
 
     }
 
-    private void OnMouseDown()
-    {
-        burningTeddyBool = true;
-    }
 
     public void DrTFadeIn()
     {
