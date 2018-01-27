@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : Robot
 {
     #region Serialize Fields
     [SerializeField]
@@ -23,35 +23,115 @@ public class Turret : MonoBehaviour
     [SerializeField]
     [Tooltip("Where the projectile spawns from")]
     private Transform projectileSpawn; // where the projectile spawns from
+    [SerializeField]
+    [Tooltip("Minimum rotation value for gun")]
+    private float minRotation = 0f; // minimum rotation value for gun
+    [SerializeField]
+    [Tooltip("Maximum rotation value for gun")]
+    private float maxRotation = 180f; // maximum rotation value for gun
+    [SerializeField]
+    [Tooltip("Speed of gun rotation")]
+    private float rotationSpeed = 3f; // how quickly the gun rotates
     #endregion
 
     #region Private Variables
     private SpriteRenderer sprite; // turret sprite
     private Vector2 fireDirection; // projectile direction
+    private bool canFire; // whether or not the turret can fire
+    private float fireDelay; // how long the turret must wait before firing
+    private float rotZ = 0; // z rotation
+    private int rotLeft = 0;
+    private int rotRight = 0;
     #endregion
 
     #region Methods - MonoBehaviour
     private void Start()
     {
         sprite = this.gameObject.GetComponent<SpriteRenderer>();
-        StartCoroutine(Fire());
+        if(!isSelected)
+        {
+            StartCoroutine(FireRoutine());
+        }
+    }
+
+    private void Update()
+    {
+        if(isSelected)
+        {
+            // mouse logic
+            if(Input.GetKey(KeyCode.A))
+            {
+                rotLeft = 1;
+            }
+            else
+            {
+                rotLeft = 0;
+            }
+            if(Input.GetKey(KeyCode.D))
+            {
+                rotRight = 1;
+            }
+            else
+            {
+                rotRight = 0;
+            }
+            rotZ += (rotRight - rotLeft) * rotationSpeed * Time.deltaTime;
+            rotZ = Mathf.Clamp(rotZ, 0f, 180f);
+            this.gameObject.transform.localEulerAngles = new Vector3(
+                this.gameObject.transform.localEulerAngles.x,
+                this.gameObject.transform.localEulerAngles.y,
+                rotZ);
+
+            // firing logic
+            if(Input.GetKey(KeyCode.Space)) // TODO: fire currently set to spacebar, possibly change control later
+            {
+                if(canFire)
+                {
+                    canFire = false;
+                    Fire();
+                    fireDelay = fireRate;
+                }
+            }
+
+            fireDelay -= Time.deltaTime;
+
+            if(fireDelay <= 0)
+            {
+                fireDelay = 0;
+                canFire = true;
+            }
+        }
+    }
+    #endregion
+
+    #region Methods - Private
+    private void Fire()
+    {
+        GameObject projectile = Instantiate(projectilePrefab);
+        projectile.transform.position = projectileSpawn.position;
+        projectile.transform.rotation = this.gameObject.transform.rotation;
+        Vector3 velocityDir = -(projectile.transform.right).normalized;
+        projectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(velocityDir.x, velocityDir.y) * projectileSpeed);
+        sprite.sprite = firingSprite;
+        StartCoroutine(SpriteSwitchRoutine());
     }
     #endregion
 
     #region Coroutines
-    IEnumerator Fire()
+    IEnumerator FireRoutine()
     {
         while(true)
         {
-            GameObject projectile = Instantiate(projectilePrefab);
-            projectile.transform.position = projectileSpawn.position;
-            // TODO: set projectile direction to match turret rotation
-            projectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * projectileSpeed);
-            sprite.sprite = firingSprite;
-            yield return new WaitForSeconds(0.025f);
-            sprite.sprite = idleSprite;
+            Fire();
             yield return new WaitForSeconds(fireRate);
         }
+    }
+
+    IEnumerator SpriteSwitchRoutine()
+    {
+        yield return new WaitForSeconds(0.025f);
+        sprite.sprite = idleSprite;
+        yield break;
     }
     #endregion
 }
