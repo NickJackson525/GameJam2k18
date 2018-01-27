@@ -8,9 +8,9 @@ public class TankController : Robot
     BoxCollider2D coll;
 
 	// Use this for initialization
-	void Start ()
+	protected override void Start ()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        base.Start();
         coll = GetComponent<BoxCollider2D>();
         isGrounded = true;
     }
@@ -25,20 +25,12 @@ public class TankController : Robot
     }
 
     //grounded checking
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
-        if (rigidbody.velocity.y == 0)
-        {
-            isGrounded = true;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         //print("Isgrounded");
         isGrounded = true;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         //print("isnotgrounded");
         isGrounded = false;

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : Robot
 {
 	// Use this for initialization
-	void Start ()
+	protected override void Start ()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        base.Start();
         speed = 3f;
 	}
 	

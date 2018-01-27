@@ -45,7 +45,7 @@ public class Turret : Robot
     #endregion
 
     #region Methods - MonoBehaviour
-    private void Start()
+    protected override void Start()
     {
         sprite = this.gameObject.GetComponent<SpriteRenderer>();
         if(!isSelected)
