@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf6aac40e08036458195e1474abc93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followStep: 0.148
+  followStep: 0.1
   followOffset: {x: 0, y: 0, z: -10}
 --- !u!1 &1728436025
 GameObject:
