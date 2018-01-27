@@ -88,9 +88,16 @@ public class Camera_Controller : MonoBehaviour
     chargingJump = true;
     yield return new WaitForSeconds(.8f - delayUpgrades[delayUpgradeLevel]);
     GameObject obj = Instantiate(boltJump, playerTransform.position, Quaternion.identity);
-    obj.GetComponent<LineRenderer>().positionCount = 3;
-    obj.GetComponent<LineRenderer>().SetPositions(new Vector3[] { playerTransform.position, Vector3.Lerp(playerTransform.position, target.position, .5f) , target.position });
+    Vector2 dist = playerTransform.position - target.position;
+    obj.GetComponent<LineRenderer>().positionCount = 5;
+    obj.GetComponent<LineRenderer>().SetPositions(new Vector3[] { playerTransform.position, Vector3.Lerp(playerTransform.position, target.position - (Vector3.up * Random.Range(-.3f, .3f) * dist.magnitude), .2f), Vector3.Lerp(playerTransform.position, target.position + (Vector3.up * Random.Range(-.3f, .3f) * dist.magnitude), .5f), Vector3.Lerp(playerTransform.position, target.position, .8f), target.position });
     playerTransform = target;
+    Destroy(obj, .5f);
     chargingJump = false;
+  }
+
+  public void SetTarget(Transform tar)
+  {
+    playerTransform = tar;
   }
 }
