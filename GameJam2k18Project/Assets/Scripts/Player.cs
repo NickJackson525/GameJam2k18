@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Robot
 {
+    Vector2 prevPos;
 	// Use this for initialization
 	protected override void Start ()
     {
@@ -15,5 +16,10 @@ public class Player : Robot
 	void Update ()
     {
         MoveLeftRight();
+        prevPos=transform.position;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.position = prevPos;
     }
 }
