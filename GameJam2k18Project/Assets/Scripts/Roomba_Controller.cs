@@ -7,6 +7,8 @@ public class Roomba_Controller : Robot
   [SerializeField] float Speed = 1f;
   BoxCollider2D coll;
   [SerializeField] Vector3 dir = Vector3.right;
+
+    AudioSource audioSource;
   void Start()
   {
     coll = GetComponent<BoxCollider2D>();
