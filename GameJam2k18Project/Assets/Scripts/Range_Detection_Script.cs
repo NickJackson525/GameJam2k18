@@ -19,7 +19,7 @@ public class Range_Detection_Script : MonoBehaviour {
       Collider2D[] gatheredColl = new Collider2D[16];
       coll.OverlapCollider(fil, gatheredColl);
       foreach (Collider2D col in gatheredColl){
-        if (col.transform != null && col.transform.tag == "Robot"){
+        if (col != null && col.transform.tag == "Robot"){
           ctrller.SetTarget(col.transform);
           col.transform.GetComponent<Robot>().IsSelected = true;
           break;
