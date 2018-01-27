@@ -8,6 +8,8 @@ TagManager:
   - WifiPoint
   - Wires
   - Robot
+  - HorizontalWire
+  - VerticalWire
   layers:
   - Default
   - TransparentFX
