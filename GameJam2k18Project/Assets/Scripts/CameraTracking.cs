@@ -31,8 +31,15 @@ public class CameraTracking : MonoBehaviour
     {
         while(true)
         {
-            target = GameObject.FindGameObjectWithTag("Player");
-            yield return new WaitForSeconds(0.5f);
+            if (GameObject.FindGameObjectsWithTag("Player").Length > 1)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+                yield return new WaitForSeconds(0.5f);
+            }
         }
     }
 }
