@@ -1265,13 +1265,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666126479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eefa52ef76141149965e50c05f31e9d, type: 3}
+  m_Script: {fileID: 11500000, guid: ecf6aac40e08036458195e1474abc93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boltJump: {fileID: 1034081794647482, guid: c1a99b5e26814184bba00e478af1268e, type: 2}
-  jumpRangeLimit: 5
-  rangeUpgradeLevel: 1
-  delayUpgradeLevel: 0
+  followStep: 0.148
+  followOffset: {x: 0, y: 0, z: -10}
 --- !u!1 &1728436025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1284,7 @@ GameObject:
   - component: {fileID: 1728436026}
   m_Layer: 0
   m_Name: Drone
-  m_TagString: Robot
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
