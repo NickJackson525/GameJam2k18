@@ -6,9 +6,12 @@ public class CameraTracking : MonoBehaviour
 {
     [SerializeField]
     [Range(0f, 1f)]
-    private float followStep;
+    [Tooltip("How far the camera lags behind its target. 0 = no follow, 1 = instantly snap to position")]
+    private float followStep = 0.1f;
     [SerializeField]
-    private Vector3 followOffset; // offset from target position
+    [Tooltip("Offset from target position")]
+    private Vector3 followOffset = new Vector3(0, 0, -10); // offset from target position
+
     private GameObject target;
 
     private void Start()
