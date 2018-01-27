@@ -10,6 +10,7 @@ public class TankController : Robot
 	// Use this for initialization
 	void Start ()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         isGrounded = true;
     }

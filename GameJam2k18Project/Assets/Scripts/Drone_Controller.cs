@@ -14,35 +14,21 @@ public class Drone_Controller : Robot {
 
     Vector2 moveS=new Vector2(3,0);
     Vector2 moveV = new Vector2(0, 3);
-    Rigidbody2D rb;
 
     private int pathIndex = 0;
 
     // Use this for initialization
     void Start () {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-	}
+        rigidbody = GetComponent<Rigidbody2D>();
+        speed = 3;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (isSelected)
         {
-            if (Input.GetKey(KeyCode.A)&& rb.velocity.x > -moveS.x)
-            {
-                rb.velocity -= (moveS/5) / 2;
-            }
-            if (Input.GetKey(KeyCode.D)&& rb.velocity.x < moveS.x)
-            {
-                rb.velocity += (moveS/5) / 2;
-            }
-            if (Input.GetKey(KeyCode.W)&& rb.velocity.y < moveV.y/1.5)
-            {
-                rb.velocity += (moveV/6) / 2;
-            }
-            if (Input.GetKey(KeyCode.S)&& rb.velocity.y > -moveV.y)
-            {
-                rb.velocity -= (moveV/7) / 2;
-            }
+            MoveUpDown();
+            MoveLeftRight();
         }
         else
         {
@@ -57,7 +43,7 @@ public class Drone_Controller : Robot {
             if(Vector3.Distance(this.gameObject.transform.position, pathNodes[pathIndex].position) > pathDistanceTillNext)
             {
                 Vector3 direction = (pathNodes[pathIndex].position - this.gameObject.transform.position).normalized;
-                rb.AddForce(new Vector2(direction.x, direction.y) * droneSpeed);
+                rigidbody.AddForce(new Vector2(direction.x, direction.y) * droneSpeed);
             }
             else
             {
@@ -65,7 +51,7 @@ public class Drone_Controller : Robot {
                 {
                     this.gameObject.transform.position = pathNodes[pathIndex].position;
                 }
-                rb.velocity = Vector3.zero;
+                rigidbody.velocity = Vector3.zero;
                 pathIndex++;
             }
         }

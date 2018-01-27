@@ -21,7 +21,7 @@ public class Range_Detection_Script : MonoBehaviour {
       foreach (Collider2D col in gatheredColl){
         if (col != null && col.transform.tag == "Robot"){
           ctrller.SetTarget(col.transform);
-          col.transform.GetComponent<Robot>().IsSelected = true;
+          col.transform.GetComponent<Robot>().isSelected = true;
           break;
         }
       }

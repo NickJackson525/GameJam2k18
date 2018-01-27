@@ -8,12 +8,12 @@ public class Robot : MonoBehaviour
     protected bool isGrounded;
     protected float speed = 1f;
     protected float jumpHeight = 3f;
-    Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidbody;
     Vector2 moveV = new Vector2(0, 3);
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        
     }
 
     private void Update()
