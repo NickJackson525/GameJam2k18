@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class Robot : MonoBehaviour
 {
     public bool isSelected { get; set; }
     protected bool isGrounded;
     protected float speed = 1f;
     protected float jumpHeight = 3f;
-    protected Rigidbody2D rigidbody;
+    protected Rigidbody2D rb;
     Vector2 moveV = new Vector2(0, 3);
 
-    private void Start()
+    protected virtual void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -25,27 +27,27 @@ public class Robot : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rigidbody.velocity = new Vector2(-speed, rigidbody.velocity.y);
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rigidbody.velocity = new Vector2(speed, rigidbody.velocity.y);
+            rb.velocity = new Vector2(speed, rb.velocity.y);
         }
         else
         {
-            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
     protected virtual void MoveUpDown()
     {
-        if (Input.GetKey(KeyCode.W) && rigidbody.velocity.y < moveV.y / 1.5)
+        if (Input.GetKey(KeyCode.W) && rb.velocity.y < moveV.y / 1.5)
         {
-            rigidbody.velocity += (moveV / 6) / 2;
+            rb.velocity += (moveV / 6) / 2;
         }
-        if (Input.GetKey(KeyCode.S) && rigidbody.velocity.y > -moveV.y)
+        if (Input.GetKey(KeyCode.S) && rb.velocity.y > -moveV.y)
         {
-            rigidbody.velocity -= (moveV / 7) / 2;
+            rb.velocity -= (moveV / 7) / 2;
         }
     }
 
@@ -53,7 +55,7 @@ public class Robot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpHeight);
+            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
         }
     }
 

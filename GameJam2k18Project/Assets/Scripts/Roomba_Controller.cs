@@ -9,8 +9,9 @@ public class Roomba_Controller : Robot
   [SerializeField] Vector3 dir = Vector3.right;
 
     AudioSource audioSource;
-  void Start()
+  protected override void Start()
   {
+        base.Start();
     coll = GetComponent<BoxCollider2D>();
   }
 
