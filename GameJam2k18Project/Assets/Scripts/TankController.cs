@@ -11,12 +11,15 @@ public class TankController : Robot {
     Vector3 dir = Vector3.right;
     BoxCollider2D coll;
     Rigidbody2D rigidbody;
+    [SerializeField]
+    bool isGrounded;
 	// Use this for initialization
 	void Start () {
         coll = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
-        
 
+        isSelected = true;
+        isGrounded = true;
     }
 	
 	// Update is called once per frame
@@ -37,7 +40,7 @@ public class TankController : Robot {
                 rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpHeight);
             }
@@ -47,6 +50,26 @@ public class TankController : Robot {
             //AI here
     }
   }
-		
-	}
+
+    //grounded checking
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        if (rigidbody.velocity.y == 0)
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //print("Isgrounded");
+        isGrounded = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //print("isnotgrounded");
+        isGrounded = false;
+    }
+
+}
 
