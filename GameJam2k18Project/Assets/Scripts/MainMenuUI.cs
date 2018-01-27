@@ -9,7 +9,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Alpha1))
         {
-            switch(Random.Range(1,7))
+            switch(Random.Range(1,10))
             {
                 case 1:
                     Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Turret1);
@@ -28,6 +28,15 @@ public class MainMenuUI : MonoBehaviour
                     break;
                 case 6:
                     Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Turret6);
+                    break;
+                case 7:
+                    Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Turret7);
+                    break;
+                case 8:
+                    Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Turret8);
+                    break;
+                case 9:
+                    Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Turret9);
                     break;
             }
         }

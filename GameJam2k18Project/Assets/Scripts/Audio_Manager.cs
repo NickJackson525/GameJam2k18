@@ -16,12 +16,15 @@ public class Audio_Manager
         {Sound.Turret4, Resources.Load<AudioClip>("Sounds/ShieldTurret-IAmShieldTurret")},
         {Sound.Turret5, Resources.Load<AudioClip>("Sounds/ShieldTurret-IAmTheSenate")},
         {Sound.Turret6, Resources.Load<AudioClip>("Sounds/ShieldTurret-Initialized")},
+        {Sound.Turret7, Resources.Load<AudioClip>("Sounds/ShieldTurret-404")},
+        {Sound.Turret8, Resources.Load<AudioClip>("Sounds/ShieldTurret-CommentYourCode")},
+        {Sound.Turret9, Resources.Load<AudioClip>("Sounds/ShieldTurret-RTFS")},
         {Sound.Searching, Resources.Load<AudioClip>("Sounds/Searching")},
         {Sound.Vaccuum, Resources.Load<AudioClip>("Sounds/Vaccuum")},
         {Sound.GameOver, Resources.Load<AudioClip>("Sounds/GameOver")},
     };
 
-    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Searching, Vaccuum, GameOver }
+    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver }
 
     public GameObject source;
 
