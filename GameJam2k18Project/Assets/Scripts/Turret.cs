@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : Robot
 {
     #region Serialize Fields
     [SerializeField]
@@ -48,7 +48,7 @@ public class Turret : MonoBehaviour
     private void Start()
     {
         sprite = this.gameObject.GetComponent<SpriteRenderer>();
-        if(this.gameObject.tag != "Player")
+        if(!isSelected)
         {
             StartCoroutine(FireRoutine());
         }
@@ -56,7 +56,7 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        if(this.gameObject.tag == "Player")
+        if(isSelected)
         {
             // mouse logic
             if(Input.GetKey(KeyCode.A))
