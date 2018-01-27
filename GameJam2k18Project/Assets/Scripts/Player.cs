@@ -4,100 +4,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool onVerticalWire = false;
-    public bool onHorizontalWire = true;
+    Vector2 moveH = new Vector2(1, 0);
+    Vector2 moveV = new Vector2(0, 1);
+    [SerializeField]
+    float playerSpeed;
     Vector3 previousPosition;
-    int delay = 20;
-
 	// Use this for initialization
 	void Start ()
     {
-        previousPosition = transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if(delay > 0)
+        if (Input.GetKey(KeyCode.W))
         {
-            delay--;
-
-            if(delay == 0)
-            {
-                previousPosition = transform.position;
-                delay = 20;
-            }
+            transform.position += Vector3.up* Time.deltaTime;
         }
-
-        if (onVerticalWire)
+        if (Input.GetKey(KeyCode.S))
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y - .1f, transform.position.z);
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y + .1f, transform.position.z);
-            }
+            transform.position += Vector3.down * Time.deltaTime;
         }
-        else if(onHorizontalWire)
+        if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.position = new Vector3(transform.position.x - .1f, transform.position.y, transform.position.z);
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.position = new Vector3(transform.position.x + .1f, transform.position.y, transform.position.z);
-            }
+            transform.position += Vector3.left * Time.deltaTime;
         }
-
-        if (transform.position.x > Screen.width)
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(Screen.width, transform.position.y, transform.position.z);
+            transform.position += Vector3.right * Time.deltaTime;
         }
-
-        if (transform.position.y > Screen.height)
-        {
-            transform.position = new Vector3(transform.position.x, Screen.height, transform.position.z);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "HorizontalWire")
-        {
-            onHorizontalWire = true;
-        }
-
-        if (coll.gameObject.tag == "VerticalWire")
-        {
-            onVerticalWire = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "HorizontalWire")
-        {
-            onHorizontalWire = false;
-
-            if (!onVerticalWire)
-            {
-                transform.position = previousPosition;
-            }
-        }
-
-        if (coll.gameObject.tag == "VerticalWire")
-        {
-            onVerticalWire = false;
-
-            if (!onHorizontalWire)
-            {
-                transform.position = previousPosition;
-            }
-        }
+        previousPosition = transform.position;
     }
 }
