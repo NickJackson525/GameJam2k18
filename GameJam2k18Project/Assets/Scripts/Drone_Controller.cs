@@ -18,8 +18,8 @@ public class Drone_Controller : Robot {
     private int pathIndex = 0;
 
     // Use this for initialization
-    void Start () {
-        rigidbody = GetComponent<Rigidbody2D>();
+    protected override void Start () {
+        base.Start();
         speed = 3;
     }
 	
@@ -43,7 +43,7 @@ public class Drone_Controller : Robot {
             if(Vector3.Distance(this.gameObject.transform.position, pathNodes[pathIndex].position) > pathDistanceTillNext)
             {
                 Vector3 direction = (pathNodes[pathIndex].position - this.gameObject.transform.position).normalized;
-                rigidbody.AddForce(new Vector2(direction.x, direction.y) * droneSpeed);
+                rb.AddForce(new Vector2(direction.x, direction.y) * droneSpeed);
             }
             else
             {
@@ -51,7 +51,7 @@ public class Drone_Controller : Robot {
                 {
                     this.gameObject.transform.position = pathNodes[pathIndex].position;
                 }
-                rigidbody.velocity = Vector3.zero;
+                rb.velocity = Vector3.zero;
                 pathIndex++;
             }
         }
