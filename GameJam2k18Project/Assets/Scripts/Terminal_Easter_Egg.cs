@@ -24,7 +24,7 @@ public class Terminal_Easter_Egg : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.R))
         {
             burningTeddyBool = true;
         }
