@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 50589103591188122}
   - component: {fileID: 61172884596330274}
   - component: {fileID: 114095102859203714}
-  - component: {fileID: 114316731294641094}
   m_Layer: 0
   m_Name: Roomba
   m_TagString: Robot
@@ -148,23 +147,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   pathDistanceTillNext: 0.1
-  pathSnap: 0
-  pathSpeed: 3
---- !u!114 &114316731294641094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1476284890841302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6267296e679a04bb320e62b96c77ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathNodes:
-  - {fileID: 0}
-  - {fileID: 0}
-  pathDistanceTillNext: 0
   pathSnap: 0
   pathSpeed: 3
 --- !u!212 &212869698335189478

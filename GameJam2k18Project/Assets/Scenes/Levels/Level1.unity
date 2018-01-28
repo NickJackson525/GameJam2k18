@@ -505,12 +505,17 @@ Prefab:
         type: 2}
       propertyPath: pathNodes.Array.data[0]
       value: 
-      objectReference: {fileID: 851538501}
+      objectReference: {fileID: 257752186}
     - target: {fileID: 114599741202578296, guid: d8bd9319571a58d419d6cd789d741672,
         type: 2}
       propertyPath: pathNodes.Array.data[1]
       value: 
-      objectReference: {fileID: 257752186}
+      objectReference: {fileID: 851538501}
+    - target: {fileID: 114599741202578296, guid: d8bd9319571a58d419d6cd789d741672,
+        type: 2}
+      propertyPath: pathSnap
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8bd9319571a58d419d6cd789d741672, type: 2}
   m_IsPrefabParent: 0
