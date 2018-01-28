@@ -1116,6 +1116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bf9ee1786d54742b34aeb65ddcf563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  menuBackground1: {fileID: 0}
+  menuBackground2: {fileID: 0}
 --- !u!114 &862069478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,8 +1703,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 862069477}
-        m_MethodName: ExitGame
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1812,7 +1815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Main Menu
 --- !u!222 &1419637003
 CanvasRenderer:
   m_ObjectHideFlags: 0
