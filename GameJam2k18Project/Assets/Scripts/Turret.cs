@@ -15,6 +15,12 @@ public class Turret : Robot
     [Tooltip("Firing turret sprite")]
     private Sprite firingSprite; // turret firing sprite
     [SerializeField]
+    [Tooltip("Idle shield-turret sprite")]
+    private Sprite shieldIdleSprite; // shield-turret idle sprite (not firing)
+    [SerializeField]
+    [Tooltip("Firing shield-turret sprite")]
+    private Sprite shieldFiringSprite; // shield-turret firing sprite
+    [SerializeField]
     [Tooltip("The projectile to fire")]
     private GameObject projectilePrefab; // projectile to fire (prefab)
     [SerializeField]
@@ -44,6 +50,7 @@ public class Turret : Robot
     private int rotRight = 0;
     private IEnumerator coroutine;
     private bool initialPossess = false;
+    private float health = 50f;
     #endregion
 
     #region Methods - MonoBehaviour
@@ -64,6 +71,8 @@ public class Turret : Robot
             if(!initialPossess)
             {
                 initialPossess = true;
+                sprite.sprite = shieldIdleSprite;
+                health = 100;
                 PlayRandomSound();
             }
             StopCoroutine(coroutine);
@@ -121,7 +130,15 @@ public class Turret : Robot
         projectile.transform.rotation = this.gameObject.transform.rotation;
         Vector3 velocityDir = -(projectile.transform.right).normalized;
         projectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(velocityDir.x, velocityDir.y) * projectileSpeed);
-        sprite.sprite = firingSprite;
+        Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Shoot);
+        if (isSelected)
+        {
+            sprite.sprite = shieldFiringSprite;
+        }
+        else
+        {
+            sprite.sprite = firingSprite;
+        }
         StartCoroutine(SpriteSwitchRoutine());
     }
 
@@ -173,7 +190,14 @@ public class Turret : Robot
     IEnumerator SpriteSwitchRoutine()
     {
         yield return new WaitForSeconds(0.025f);
-        sprite.sprite = idleSprite;
+        if (isSelected)
+        {
+            sprite.sprite = shieldIdleSprite;
+        }
+        else
+        {
+            sprite.sprite = idleSprite;
+        }
         yield break;
     }
     #endregion
