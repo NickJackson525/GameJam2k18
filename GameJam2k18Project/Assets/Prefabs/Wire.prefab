@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 222850958891972816}
   - component: {fileID: 114406110388312462}
   - component: {fileID: 50736030479658764}
-  - component: {fileID: 61380543216048468}
-  - component: {fileID: 61382193229269396}
+  - component: {fileID: 61690317878877030}
   m_Layer: 5
   m_Name: Wire
   m_TagString: Wires
@@ -51,7 +50,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &61380543216048468
+--- !u!61 &61690317878877030
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -60,10 +59,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05807495, y: 5.745493}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -74,32 +73,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 254.7828, y: 0.7061105}
-  m_EdgeRadius: 0
---- !u!61 &61382193229269396
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1909429666327700}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.05807495, y: -5.745493}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 254.7828, y: 0.7061105}
+  m_Size: {x: 250, y: 12}
   m_EdgeRadius: 0
 --- !u!114 &114406110388312462
 MonoBehaviour:
