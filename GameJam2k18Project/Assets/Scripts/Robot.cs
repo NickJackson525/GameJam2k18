@@ -7,7 +7,7 @@ using UnityEngine;
 public class Robot : MonoBehaviour
 {
     public GameObject terminalSpark;
-    GameObject createdSpark;
+    protected GameObject createdSpark;
 
     public bool isSelected { get; set; }
     protected bool isGrounded;

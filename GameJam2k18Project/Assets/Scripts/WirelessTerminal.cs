@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class WirelessTerminal : Robot
 {
-    public GameObject terminalSpark;
-    GameObject createdSpark;
     public Sprite terminalOn;
     public Sprite terminalOff;
     public bool sendingPlayer;
 
 	// Update is called once per frame
-	void Update ()
+	protected override void Update ()
     {
         if (isSelected)
         {

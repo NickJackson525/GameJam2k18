@@ -43,6 +43,10 @@ public class CameraTracking : MonoBehaviour
             else
             {
                 target = GameObject.FindGameObjectWithTag("Player");
+                if(target == null)
+                {
+                    target = GameObject.Find("Player");
+                }
                 yield return new WaitForSeconds(0.5f);
             }
         }
