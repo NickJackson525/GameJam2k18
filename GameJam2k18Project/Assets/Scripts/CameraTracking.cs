@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraTracking : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class CameraTracking : MonoBehaviour
     private void Update()
     {
         Audio_Manager.Instance.Update();
+
+        if(Input.GetKeyUp(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 
     private void FixedUpdate()

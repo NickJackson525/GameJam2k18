@@ -328,6 +328,8 @@ GameObject:
   - component: {fileID: 309597472}
   - component: {fileID: 309597471}
   - component: {fileID: 309597470}
+  - component: {fileID: 309597474}
+  - component: {fileID: 309597473}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -439,6 +441,42 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309597468}
+--- !u!61 &309597473
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309597468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008354187, y: 0.41038513}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 224.35422, y: 31.382565}
+  m_EdgeRadius: 0
+--- !u!114 &309597474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309597468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b79e178dd7e9c40a3835e9c974cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &478899731
 GameObject:
   m_ObjectHideFlags: 0

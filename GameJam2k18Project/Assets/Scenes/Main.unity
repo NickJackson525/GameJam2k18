@@ -1435,6 +1435,8 @@ GameObject:
   - component: {fileID: 1064858804}
   - component: {fileID: 1064858803}
   - component: {fileID: 1064858802}
+  - component: {fileID: 1064858805}
+  - component: {fileID: 1064858806}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1546,6 +1548,42 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1064858800}
+--- !u!114 &1064858805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064858800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b79e178dd7e9c40a3835e9c974cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1064858806
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064858800}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008354187, y: 0.41038513}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 224.35422, y: 31.382565}
+  m_EdgeRadius: 0
 --- !u!1 &1087161828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1731,8 @@ GameObject:
   - component: {fileID: 1137309341}
   - component: {fileID: 1137309340}
   - component: {fileID: 1137309339}
+  - component: {fileID: 1137309342}
+  - component: {fileID: 1137309343}
   m_Layer: 5
   m_Name: Instructions Button
   m_TagString: Untagged
@@ -1804,6 +1844,42 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1137309337}
+--- !u!114 &1137309342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137309337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b79e178dd7e9c40a3835e9c974cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1137309343
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137309337}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008354187, y: 0.41038513}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 224.35422, y: 31.382565}
+  m_EdgeRadius: 0
 --- !u!1 &1167368318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2465,8 @@ GameObject:
   - component: {fileID: 1873282283}
   - component: {fileID: 1873282282}
   - component: {fileID: 1873282281}
+  - component: {fileID: 1873282284}
+  - component: {fileID: 1873282285}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -2500,6 +2578,42 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1873282279}
+--- !u!114 &1873282284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873282279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b79e178dd7e9c40a3835e9c974cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1873282285
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873282279}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008354187, y: 0.41038513}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 224.35422, y: 31.382565}
+  m_EdgeRadius: 0
 --- !u!1 &1899986012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,6 +2625,8 @@ GameObject:
   - component: {fileID: 1899986016}
   - component: {fileID: 1899986015}
   - component: {fileID: 1899986014}
+  - component: {fileID: 1899986017}
+  - component: {fileID: 1899986018}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -2622,6 +2738,42 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899986012}
+--- !u!114 &1899986017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899986012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b79e178dd7e9c40a3835e9c974cc68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1899986018
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1899986012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0008354187, y: 0.41038513}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 224.35422, y: 31.382565}
+  m_EdgeRadius: 0
 --- !u!1 &1913283185
 GameObject:
   m_ObjectHideFlags: 0

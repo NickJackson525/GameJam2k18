@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4092113639397138}
   - component: {fileID: 198628166967139792}
   - component: {fileID: 199647169677288316}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114231970782776202}
   - component: {fileID: 50980946703839050}
   - component: {fileID: 58259128539393726}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TerminalSpark
   m_TagString: Player
   m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1783114416543538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.06, y: -2.2127776, z: 0}
+  m_LocalPosition: {x: 0.25718656, y: -6.1114016, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4092113639397138}
@@ -139,6 +139,7 @@ MonoBehaviour:
   targetPoint: {x: 0, y: 0, z: 0}
   startPoint: {x: 0, y: 0}
   timer: 0
+  returnHome: 0
 --- !u!198 &198628166967139792
 ParticleSystem:
   m_ObjectHideFlags: 1
