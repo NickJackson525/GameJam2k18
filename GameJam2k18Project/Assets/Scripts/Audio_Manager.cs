@@ -22,9 +22,10 @@ public class Audio_Manager
         {Sound.Searching, Resources.Load<AudioClip>("Sounds/Searching")},
         {Sound.Vaccuum, Resources.Load<AudioClip>("Sounds/Vaccuum")},
         {Sound.GameOver, Resources.Load<AudioClip>("Sounds/GameOver")},
+        {Sound.Shoot, Resources.Load<AudioClip>("Sounds/Shoot_laser")},
     };
 
-    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver }
+    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver, Shoot }
 
     public GameObject source;
 
