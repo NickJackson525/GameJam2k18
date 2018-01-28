@@ -14,6 +14,9 @@ public class GateParent : MonoBehaviour {
     [SerializeField]
     GameObject influencee2;
 
+    [SerializeField]
+    GameObject testButton;
+
     //output of gate
     bool output;
 
@@ -96,33 +99,11 @@ public class GateParent : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
-        if (influencee1.tag == "Gate")
+    { 
+        if (this.testButton.GetComponent<Test>().testing)
         {
-            influencee1.GetComponent<GateParent>().InputTop = output;
+            this.DecideOutput(inputTop, inputBottom);
         }
-        if (influencee1.tag == "Button")
-        {
-            influencee1.GetComponent<Button>().state = output;
-        }
-        if (influencee1.tag == "Button 2")
-        {
-            influencee1.GetComponent<Button>().state = !output;
-        }
-        if (influencee2.tag == "Gate")
-        {
-            influencee2.GetComponent<GateParent>().InputTop = output;
-        }
-        if (influencee2.tag == "Button")
-        {
-            influencee2.GetComponent<Button>().state = output;
-        }
-        if (influencee2.tag == "Button 2")
-        {
-            influencee2.GetComponent<Button>().state = !output;
-        }
-
-        this.DecideOutput(inputTop, inputBottom);
     }
 
     void DecideOutput(bool top, bool bottom)
@@ -191,6 +172,31 @@ public class GateParent : MonoBehaviour {
                 break;
             default:
                 break;
+        }
+
+        if (influencee1.tag == "Gate")
+        {
+            influencee1.GetComponent<GateParent>().InputTop = output;
+        }
+        if (influencee1.tag == "Button")
+        {
+            influencee1.GetComponent<Button>().state = output;
+        }
+        if (influencee1.tag == "Button 2")
+        {
+            influencee1.GetComponent<Button>().state = !output;
+        }
+        if (influencee2.tag == "Gate")
+        {
+            influencee2.GetComponent<GateParent>().InputTop = output;
+        }
+        if (influencee2.tag == "Button")
+        {
+            influencee2.GetComponent<Button>().state = output;
+        }
+        if (influencee2.tag == "Button 2")
+        {
+            influencee2.GetComponent<Button>().state = !output;
         }
     }
 
