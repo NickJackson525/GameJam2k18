@@ -122,6 +122,7 @@ public class Turret : Robot
         }
         else
         {
+            initialPossess = false;
             TrackPlayer();
         }
     }
