@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Robot
 {
     Vector2 prevPos;
+
 	// Use this for initialization
 	protected override void Start ()
     {

@@ -14,12 +14,13 @@ public class TankController : Robot
         coll = GetComponent<BoxCollider2D>();
         isGrounded = true;
     }
-	
-	// Update is called once per frame
-	void Update()
+
+    // Update is called once per frame
+    protected override void Update()
     {
         if (isSelected)
         {
+            base.Update();
             MoveLeftRight();
         }
     }
