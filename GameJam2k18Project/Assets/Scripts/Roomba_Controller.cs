@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Roomba_Controller : Robot
 {
-    private void Start()
+    protected override void Start()
     {
         base.Start();
+        speed = 3;
     }
-
     private void Update()
     {
-        MoveLeftRight();
+        if (isSelected)
+            MoveLeftRight();
+        else
+            FollowPath();
     }
 }
