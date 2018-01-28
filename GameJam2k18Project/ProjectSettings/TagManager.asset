@@ -9,6 +9,10 @@ TagManager:
   - Wires
   - Robot
   - Spark
+  - NonPossesable
+  - Gate
+  - Button
+  - Button 2
   layers:
   - Default
   - TransparentFX
