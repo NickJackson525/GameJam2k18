@@ -49,8 +49,8 @@ public class Turret : Robot
     private int rotLeft = 0;
     private int rotRight = 0;
     private IEnumerator coroutine;
+    private bool fireRoutineRunning = false;
     private bool initialPossess = false;
-    private float health = 50f;
     #endregion
 
     #region Methods - MonoBehaviour
@@ -60,7 +60,6 @@ public class Turret : Robot
         if(!isSelected)
         {
             coroutine = FireRoutine();
-            StartCoroutine(coroutine);
         }
     }
 
@@ -72,11 +71,11 @@ public class Turret : Robot
             {
                 initialPossess = true;
                 sprite.sprite = shieldIdleSprite;
-                health = 100;
+                health = 100f;
                 PlayRandomSound();
             }
             StopCoroutine(coroutine);
-            // mouse logic
+            fireRoutineRunning = false;
             if(Input.GetKey(KeyCode.A))
             {
                 rotLeft = 1;
@@ -132,13 +131,26 @@ public class Turret : Robot
         if(GameObject.FindGameObjectWithTag("Player"))
         {
             GameObject target = GameObject.FindGameObjectWithTag("Player");
-            Vector3 trackDirection = this.gameObject.transform.position - target.transform.position;
-            rotZ = Mathf.Atan2(trackDirection.y, trackDirection.x) * rotationSpeed;
-            rotZ = Mathf.Clamp(rotZ, minRotation, maxRotation);
-            this.gameObject.transform.localEulerAngles = new Vector3(
-                this.gameObject.transform.localEulerAngles.x,
-                this.gameObject.transform.localEulerAngles.y,
-                rotZ);
+            if (Vector3.Distance(this.gameObject.transform.position, target.transform.position) <= aggroDistance)
+            {
+                if (!fireRoutineRunning)
+                {
+                    fireRoutineRunning = true;
+                    StartCoroutine(coroutine);
+                }
+                Vector3 trackDirection = this.gameObject.transform.position - target.transform.position;
+                rotZ = Mathf.Atan2(trackDirection.y, trackDirection.x) * rotationSpeed;
+                rotZ = Mathf.Clamp(rotZ, minRotation, maxRotation);
+                this.gameObject.transform.localEulerAngles = new Vector3(
+                    this.gameObject.transform.localEulerAngles.x,
+                    this.gameObject.transform.localEulerAngles.y,
+                    rotZ);
+            }
+            else
+            {
+                StopCoroutine(coroutine);
+                fireRoutineRunning = false;
+            }
         }
     }
 

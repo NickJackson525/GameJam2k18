@@ -13,14 +13,21 @@ public class Robot : MonoBehaviour
     protected Rigidbody2D rb;
     Vector2 moveV = new Vector2(0, 3);
 
+    [Header("Pathing")]
     [SerializeField]
-    private List<Transform> pathNodes;
+    protected List<Transform> pathNodes;
     [SerializeField]
-    private float pathDistanceTillNext;
+    protected float pathDistanceTillNext;
     [SerializeField]
-    private bool pathSnap;
+    protected bool pathSnap;
     [SerializeField]
-    private float pathSpeed = 3f;
+    protected float pathSpeed = 3f;
+
+    [Header("Combat")]
+    [SerializeField]
+    protected float aggroDistance = 5f;
+    [SerializeField]
+    protected float health = 50f;
 
     protected int pathIndex = 0;
 
