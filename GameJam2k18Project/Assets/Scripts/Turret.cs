@@ -94,7 +94,7 @@ public class Turret : Robot
                 rotRight = 0;
             }
             rotZ += (rotRight - rotLeft) * rotationSpeed * Time.deltaTime;
-            rotZ = Mathf.Clamp(rotZ, 0f, 180f);
+            rotZ = Mathf.Clamp(rotZ, minRotation, maxRotation);
             this.gameObject.transform.localEulerAngles = new Vector3(
                 this.gameObject.transform.localEulerAngles.x,
                 this.gameObject.transform.localEulerAngles.y,
@@ -119,10 +119,29 @@ public class Turret : Robot
                 canFire = true;
             }
         }
+        else
+        {
+            TrackPlayer();
+        }
     }
     #endregion
 
     #region Methods - Private
+    private void TrackPlayer()
+    {
+        if(GameObject.FindGameObjectWithTag("Player"))
+        {
+            GameObject target = GameObject.FindGameObjectWithTag("Player");
+            Vector3 trackDirection = this.gameObject.transform.position - target.transform.position;
+            rotZ = Mathf.Atan2(trackDirection.y, trackDirection.x) * rotationSpeed;
+            rotZ = Mathf.Clamp(rotZ, minRotation, maxRotation);
+            this.gameObject.transform.localEulerAngles = new Vector3(
+                this.gameObject.transform.localEulerAngles.x,
+                this.gameObject.transform.localEulerAngles.y,
+                rotZ);
+        }
+    }
+
     private void Fire()
     {
         GameObject projectile = Instantiate(projectilePrefab);
