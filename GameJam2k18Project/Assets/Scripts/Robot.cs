@@ -82,6 +82,12 @@ public class Robot : MonoBehaviour
 
     protected void FollowPath()
     {
+        if(pathNodes.Count == 0)
+        {
+            Debug.Log("Warning: " + this.gameObject.name + " does not have a path set up. Cannot follow null path.");
+            return;
+        }
+
         if (pathIndex < pathNodes.Count)
         {
             if (Vector3.Distance(this.gameObject.transform.position, pathNodes[pathIndex].position) > pathDistanceTillNext)
