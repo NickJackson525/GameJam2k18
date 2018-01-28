@@ -1442,6 +1442,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 64, y: 64}
   m_EdgeRadius: 0
+--- !u!1 &446333164 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1952139250980076, guid: 06c6b1b763fd0614d939b9c64f8f9533,
+    type: 2}
+  m_PrefabInternal: {fileID: 739196486}
 --- !u!1 &467724543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,6 +2188,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114483559754190262, guid: 39b597e3c21150440990fad406b19d30,
         type: 2}
+      propertyPath: terminalSpark
+      value: 
+      objectReference: {fileID: 446333164}
+    - target: {fileID: 114483559754190262, guid: 39b597e3c21150440990fad406b19d30,
+        type: 2}
       propertyPath: pathNodes.Array.data[0]
       value: 
       objectReference: {fileID: 1183200065}
@@ -2191,37 +2201,6 @@ Prefab:
       propertyPath: pathNodes.Array.data[1]
       value: 
       objectReference: {fileID: 1391578253}
-    - target: {fileID: 4434599158386480, guid: 39b597e3c21150440990fad406b19d30, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434599158386480, guid: 39b597e3c21150440990fad406b19d30, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434599158386480, guid: 39b597e3c21150440990fad406b19d30, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434599158386480, guid: 39b597e3c21150440990fad406b19d30, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4434599158386480, guid: 39b597e3c21150440990fad406b19d30, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212017117774877636, guid: 39b597e3c21150440990fad406b19d30,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300004, guid: be0b11711ec660e4c9d281241785b28f,
-        type: 3}
-    - target: {fileID: 114483559754190262, guid: 39b597e3c21150440990fad406b19d30,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39b597e3c21150440990fad406b19d30, type: 2}
   m_IsPrefabParent: 0
