@@ -184,6 +184,11 @@ Prefab:
       propertyPath: m_Name
       value: Terminal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114239637693237350, guid: 35227ec3f13c37b409817acdb15ccd6a,
+        type: 2}
+      propertyPath: LastTerminal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35227ec3f13c37b409817acdb15ccd6a, type: 2}
   m_IsPrefabParent: 0

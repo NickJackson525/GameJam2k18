@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class Bullet : MonoBehaviour
             if(collision.gameObject.GetComponent<Robot>().Health <= 0)
             {
                 Destroy(collision.gameObject);
+                if (tag=="Player")
+                {
+                    SceneManager.LoadScene("LossScn");
+                }
             }
         }
         Destroy(this.gameObject);
