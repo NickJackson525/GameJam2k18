@@ -22,11 +22,11 @@ public class Bullet : MonoBehaviour
             //print(collision.gameObject.GetComponent<Robot>().Health);
             if(collision.gameObject.GetComponent<Robot>().Health <= 0)
             {
-                Destroy(collision.gameObject);
-                if (tag=="Player")
+                if (collision.gameObject.tag == "Player")
                 {
                     SceneManager.LoadScene("LossScn");
                 }
+                Destroy(collision.gameObject);
             }
         }
         Destroy(this.gameObject);
