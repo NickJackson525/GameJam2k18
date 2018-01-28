@@ -217,7 +217,7 @@ MonoBehaviour:
   shootTime: 50
   projectilePrefab: {fileID: 1051415976060506, guid: bb33ca1597706dc4b9c5612cd403d105,
     type: 2}
-  projectileSpeed: 300
+  projectileSpeed: 400
   projectileSpawn: {fileID: 4431600177570260}
 --- !u!114 &114483559754190262
 MonoBehaviour:
