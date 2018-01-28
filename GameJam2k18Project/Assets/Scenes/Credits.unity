@@ -1589,8 +1589,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.8, y: 59.3}
-  m_SizeDelta: {x: 529.2, y: 409.2}
+  m_AnchoredPosition: {x: 1.8, y: 43.2}
+  m_SizeDelta: {x: 529.2, y: 441.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700991139
 MonoBehaviour:
@@ -1613,7 +1613,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 737d2071c690de949a1ef7c6327c84ba, type: 3}
-    m_FontSize: 30
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1625,7 +1625,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "$CREDITS:\nAustin Borth\nDirk Dieters\nJosh Dihle\nMatt Ellison\nNick Jackson\nKevin
-    Moore\nShawn Partin\nZach Quail\n\nbash3.2$\u2610"
+    Moore\nShawn Partin\nZach Quail\nDana Sterritt\n\nbash3.2$\u2610"
 --- !u!222 &1700991140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2233,6 +2233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bf9ee1786d54742b34aeb65ddcf563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  menuBackground1: {fileID: 0}
+  menuBackground2: {fileID: 0}
 --- !u!114 &2106465526
 MonoBehaviour:
   m_ObjectHideFlags: 0
