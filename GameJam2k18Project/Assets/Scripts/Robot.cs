@@ -72,7 +72,7 @@ public class Robot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player" && gameObject.tag != "Player")
+        if (coll.gameObject.tag == "Player" && gameObject.tag != "Player" && gameObject.tag != "WifiPoint")
         {
             Destroy(coll.gameObject);
             gameObject.tag = "Player";
