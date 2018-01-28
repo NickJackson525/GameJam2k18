@@ -168,7 +168,7 @@ public class Turret : Robot
         projectile.transform.rotation = this.gameObject.transform.rotation;
         Vector3 velocityDir = -(projectile.transform.right).normalized;
         projectile.GetComponent<Rigidbody2D>().AddForce(new Vector2(velocityDir.x, velocityDir.y) * projectileSpeed);
-        Audio_Manager.Instance.PlaySound(Audio_Manager.Sound.Shoot);
+        Audio_Manager.Instance.PlaySound(0.2f, Audio_Manager.Sound.Shoot);
         if (isSelected)
         {
             sprite.sprite = shieldFiringSprite;
