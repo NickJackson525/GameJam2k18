@@ -63,10 +63,12 @@ public class Turret : Robot
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
         if(isSelected)
         {
+            base.Update();
+
             if(!initialPossess)
             {
                 initialPossess = true;

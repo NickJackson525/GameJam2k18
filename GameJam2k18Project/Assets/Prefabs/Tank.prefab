@@ -99,8 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5153916ca9d094db30608dfc863fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpHeight: 5
+  terminalSpark: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
+    type: 2}
+  pathNodes: []
+  pathDistanceTillNext: 0
+  pathSnap: 0
+  pathSpeed: 3
+  aggroDistance: 5
+  health: 50
 --- !u!212 &212633516220655476
 SpriteRenderer:
   m_ObjectHideFlags: 1

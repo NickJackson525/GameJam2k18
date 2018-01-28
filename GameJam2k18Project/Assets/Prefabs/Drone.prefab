@@ -143,12 +143,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228bb4238435b144ba04747b16e6987a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terminalSpark: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
+    type: 2}
   pathNodes:
   - {fileID: 0}
   - {fileID: 0}
   pathDistanceTillNext: 0.1
   pathSnap: 0
   pathSpeed: 100
+  aggroDistance: 5
+  health: 50
 --- !u!212 &212883254216632998
 SpriteRenderer:
   m_ObjectHideFlags: 1
