@@ -23,13 +23,16 @@ public class Audio_Manager
         {Sound.Searching, Resources.Load<AudioClip>("Sounds/Searching")},
         {Sound.Vaccuum, Resources.Load<AudioClip>("Sounds/Vaccuum")},
         {Sound.GameOver, Resources.Load<AudioClip>("Sounds/GameOver")},
+        {Sound.Victory, Resources.Load<AudioClip>("Sounds/Victory")},
         {Sound.Shoot, Resources.Load<AudioClip>("Sounds/Shoot_laser")},
         {Sound.Background1, Resources.Load<AudioClip>("Sounds/Beat1")},
         {Sound.Background2, Resources.Load<AudioClip>("Sounds/Beat2")},
         {Sound.ThemeSong, Resources.Load<AudioClip>("Sounds/ThemeSong")},
+        {Sound.ButtonHover, Resources.Load<AudioClip>("Sounds/ButtonHover")},
+        {Sound.ButtonClick, Resources.Load<AudioClip>("Sounds/ButtonClick")},
     };
 
-    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver, Shoot, Background1, Background2, ThemeSong }
+    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver, Victory, Shoot, Background1, Background2, ThemeSong, ButtonHover, ButtonClick }
 
     public GameObject source;
     public GameObject backroundSource;
@@ -120,7 +123,7 @@ public class Audio_Manager
         if (SceneManager.GetActiveScene().name == "Main")
         {
             backroundSource.GetComponent<AudioSource>().Stop();
-            backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.ThemeSong], 1f);
+            backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.ThemeSong], .6f);
         }
         else
         {

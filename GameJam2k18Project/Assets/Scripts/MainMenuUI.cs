@@ -9,7 +9,10 @@ public class MainMenuUI : MonoBehaviour
     public GameObject background;
     public Sprite menuBackground1;
     public Sprite menuBackground2;
+    bool canContinue = false;
     int timer = 100;
+    int soundDelayTimer = 0;
+    string scene = "";
 
     private void Update()
     {
@@ -29,6 +32,16 @@ public class MainMenuUI : MonoBehaviour
                 }
 
                 timer = 100;
+            }
+        }
+
+        if(soundDelayTimer > 0)
+        {
+            soundDelayTimer--;
+
+            if(soundDelayTimer == 0)
+            {
+                SceneManager.LoadScene(scene);
             }
         }
 
@@ -71,11 +84,14 @@ public class MainMenuUI : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        Audio_Manager.Instance.PlaySound(4f, Audio_Manager.Sound.ButtonClick);
+        soundDelayTimer = 15;
+        scene = sceneName;
     }
 
     public void ExitGame()
     {
+        Audio_Manager.Instance.PlaySound(4f, Audio_Manager.Sound.ButtonClick);
         Application.Quit();
     }
 }

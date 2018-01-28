@@ -30,11 +30,11 @@ public class PlayerFromTerminal : MonoBehaviour
 
         if(!returnHome)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPoint, .2f);
+            transform.position = Vector3.Slerp(transform.position, targetPoint, .05f);
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, startPoint, .2f);
+            transform.position = Vector3.Slerp(transform.position, startPoint, .2f);
         }
 	}
 }
