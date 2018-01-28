@@ -95,6 +95,16 @@ public class Audio_Manager
         source.GetComponent<AudioSource>().PlayOneShot(SoundClips[soundToPlay], 1f);
     }
 
+    public void PlaySound(float volume, Sound soundToPlay)
+    {
+        if (source == null)
+        {
+            source = GameObject.Find("AudioSource");
+        }
+
+        source.GetComponent<AudioSource>().PlayOneShot(SoundClips[soundToPlay], volume);
+    }
+
     public void PlaySound(AudioSource targetSource, Sound soundToPlay)
     {
         if (source == null)
