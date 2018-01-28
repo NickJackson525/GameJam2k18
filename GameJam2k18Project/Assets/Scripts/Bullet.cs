@@ -14,10 +14,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Robot")
         {
             //print("Shot");
             collision.gameObject.GetComponent<Robot>().Health -= damage;
+            //print(collision.gameObject.GetComponent<Robot>().Health);
             if(collision.gameObject.GetComponent<Robot>().Health <= 0)
             {
                 Destroy(collision.gameObject);
