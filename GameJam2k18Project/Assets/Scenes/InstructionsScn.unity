@@ -1298,6 +1298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bf9ee1786d54742b34aeb65ddcf563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  menuBackground1: {fileID: 0}
+  menuBackground2: {fileID: 0}
 --- !u!114 &1317329075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,7 +2008,9 @@ MonoBehaviour:
 
     Space -Turret shooting
 
-    mouse Left Click - transmit to a robot'
+    mouse Left Click - transmit to a robot
+
+    R-Restart level'
 --- !u!222 &1997282376
 CanvasRenderer:
   m_ObjectHideFlags: 0
