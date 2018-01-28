@@ -152,6 +152,10 @@ public class Turret : Robot
                 fireRoutineRunning = false;
             }
         }
+        else
+        {
+            StopCoroutine(coroutine);
+        }
     }
 
     private void Fire()

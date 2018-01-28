@@ -29,6 +29,18 @@ public class Robot : MonoBehaviour
     [SerializeField]
     protected float health = 50f;
 
+    public float Health
+    {
+        get
+        {
+            return health;
+        }
+        set
+        {
+            health = value;
+        }
+    }
+
     protected int pathIndex = 0;
 
     protected virtual void Start()

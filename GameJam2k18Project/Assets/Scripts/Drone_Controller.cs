@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Drone_Controller : Robot {
     Vector2 moveS=new Vector2(3,0);
-    Vector2 moveV = new Vector2(0, 3);
 
     // Use this for initialization
     protected override void Start () {
