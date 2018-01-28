@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 50969126495823062}
   - component: {fileID: 70893890153369708}
   - component: {fileID: 114483559754190262}
+  - component: {fileID: 114846014513572348}
   m_Layer: 0
   m_Name: BattleBot
   m_TagString: WifiPoint
@@ -216,7 +217,7 @@ MonoBehaviour:
   shootTime: 50
   projectilePrefab: {fileID: 1051415976060506, guid: bb33ca1597706dc4b9c5612cd403d105,
     type: 2}
-  projectileSpeed: 200
+  projectileSpeed: 300
   projectileSpawn: {fileID: 4431600177570260}
 --- !u!114 &114483559754190262
 MonoBehaviour:
@@ -238,6 +239,17 @@ MonoBehaviour:
   pathSpeed: 5
   aggroDistance: 5
   health: 50
+--- !u!114 &114846014513572348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519608906187640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d829e334d3db574caedc8af640ca66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212017117774877636
 SpriteRenderer:
   m_ObjectHideFlags: 1
