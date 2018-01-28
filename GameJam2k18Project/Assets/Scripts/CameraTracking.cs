@@ -19,6 +19,11 @@ public class CameraTracking : MonoBehaviour
         StartCoroutine(TargetPlayer());
     }
 
+    private void Update()
+    {
+        Audio_Manager.Instance.Update();
+    }
+
     private void FixedUpdate()
     {
         if (target != null)

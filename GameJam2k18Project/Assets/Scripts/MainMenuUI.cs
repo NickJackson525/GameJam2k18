@@ -7,6 +7,8 @@ public class MainMenuUI : MonoBehaviour
 {
     private void Update()
     {
+        Audio_Manager.Instance.Update();
+
         if(Input.GetKeyUp(KeyCode.Alpha1))
         {
             switch(Random.Range(1,10))
