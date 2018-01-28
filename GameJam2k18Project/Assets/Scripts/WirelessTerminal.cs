@@ -30,8 +30,8 @@ public class WirelessTerminal : Robot
             createdSpark.GetComponent<PlayerFromTerminal>().targetPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             createdSpark.GetComponent<PlayerFromTerminal>().targetPoint = new Vector3(createdSpark.GetComponent<PlayerFromTerminal>().targetPoint.x, createdSpark.GetComponent<PlayerFromTerminal>().targetPoint.y, 0);
             createdSpark.GetComponent<PlayerFromTerminal>().startPoint = transform.position;
-            createdSpark.GetComponent<PlayerFromTerminal>().timer = 300;
-            createdSpark.tag = "Player";
+            createdSpark.GetComponent<PlayerFromTerminal>().timer = 100;
+            createdSpark.tag = "Spark";
             gameObject.tag = "WifiPoint";
             isSelected = false;
         }

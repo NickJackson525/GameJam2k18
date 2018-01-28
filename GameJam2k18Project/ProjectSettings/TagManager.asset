@@ -8,7 +8,7 @@ TagManager:
   - WifiPoint
   - Wires
   - Robot
-  - NonPossesable
+  - Spark
   layers:
   - Default
   - TransparentFX

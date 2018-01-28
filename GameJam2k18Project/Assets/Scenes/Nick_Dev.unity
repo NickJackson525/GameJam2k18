@@ -193,6 +193,12 @@ Prefab:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114599741202578296, guid: d8bd9319571a58d419d6cd789d741672,
+        type: 2}
+      propertyPath: terminalSpark
+      value: 
+      objectReference: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8bd9319571a58d419d6cd789d741672, type: 2}
   m_IsPrefabParent: 0
@@ -5918,10 +5924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc9245b3b7b4a844add56f3097dfe44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terminalSpark: {fileID: 0}
   pathNodes: []
   pathDistanceTillNext: 0
   pathSnap: 0
   pathSpeed: 3
+  aggroDistance: 5
+  health: 50
   terminalSpark: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
     type: 2}
   terminalOn: {fileID: 21300000, guid: e1274453de60e6b46803724ee5040ce9, type: 3}
