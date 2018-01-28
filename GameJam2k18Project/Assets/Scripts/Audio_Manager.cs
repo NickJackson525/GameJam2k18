@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Audio_Manager
 {
@@ -23,11 +24,15 @@ public class Audio_Manager
         {Sound.Vaccuum, Resources.Load<AudioClip>("Sounds/Vaccuum")},
         {Sound.GameOver, Resources.Load<AudioClip>("Sounds/GameOver")},
         {Sound.Shoot, Resources.Load<AudioClip>("Sounds/Shoot_laser")},
+        {Sound.Background1, Resources.Load<AudioClip>("Sounds/Beat1")},
+        {Sound.Background2, Resources.Load<AudioClip>("Sounds/Beat2")},
+        {Sound.ThemeSong, Resources.Load<AudioClip>("Sounds/ThemeSong")},
     };
 
-    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver, Shoot }
+    public enum Sound { Turret1, Turret2, Turret3, Turret4, Turret5, Turret6, Turret7, Turret8, Turret9, Searching, Vaccuum, GameOver, Shoot, Background1, Background2, ThemeSong }
 
     public GameObject source;
+    public GameObject backroundSource;
 
     #endregion
 
@@ -61,6 +66,23 @@ public class Audio_Manager
 
     #endregion
 
+    #region Update
+
+    public void Update()
+    {
+        if (backroundSource == null)
+        {
+            backroundSource = GameObject.Find("BackgroundSource");
+        }
+
+        if (!backroundSource.GetComponent<AudioSource>().isPlaying)
+        {
+            PlayBackgroundMusic();
+        }
+    }
+
+    #endregion
+
     #region Play Sounds
 
     public void PlaySound(Sound soundToPlay)
@@ -73,6 +95,16 @@ public class Audio_Manager
         source.GetComponent<AudioSource>().PlayOneShot(SoundClips[soundToPlay], 1f);
     }
 
+    public void PlaySound(float volume, Sound soundToPlay)
+    {
+        if (source == null)
+        {
+            source = GameObject.Find("AudioSource");
+        }
+
+        source.GetComponent<AudioSource>().PlayOneShot(SoundClips[soundToPlay], volume);
+    }
+
     public void PlaySound(AudioSource targetSource, Sound soundToPlay)
     {
         if (source == null)
@@ -81,6 +113,33 @@ public class Audio_Manager
         }
 
         targetSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[soundToPlay], 1f);
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            backroundSource.GetComponent<AudioSource>().Stop();
+            backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.ThemeSong], 1f);
+        }
+        else
+        {
+            backroundSource.GetComponent<AudioSource>().Stop();
+            int rand = UnityEngine.Random.Range(0, 2);
+
+            switch (rand)
+            {
+                case 0:
+                    backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.Background1], 3f);
+                    break;
+                case 1:
+                    backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.Background2], 3f);
+                    break;
+                default:
+                    backroundSource.GetComponent<AudioSource>().PlayOneShot(SoundClips[Sound.Background1], 3f);
+                    break;
+            }
+        }
     }
 
     #endregion

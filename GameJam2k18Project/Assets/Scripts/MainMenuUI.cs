@@ -2,11 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
+    public GameObject background;
+    public Sprite menuBackground1;
+    public Sprite menuBackground2;
+    int timer = 100;
+
     private void Update()
     {
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            if (timer > 0)
+            {
+                timer--;
+
+                if (timer == 0)
+                {
+                    if (background.GetComponent<Image>().sprite == menuBackground1)
+                    {
+                        background.GetComponent<Image>().sprite = menuBackground2;
+                    }
+                    else
+                    {
+                        background.GetComponent<Image>().sprite = menuBackground1;
+                    }
+
+                    timer = 100;
+                }
+            }
+        }
+
+        Audio_Manager.Instance.Update();
+
         if(Input.GetKeyUp(KeyCode.Alpha1))
         {
             switch(Random.Range(1,10))

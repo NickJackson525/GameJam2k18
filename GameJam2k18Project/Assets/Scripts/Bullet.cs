@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,12 +15,17 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Robot")
         {
             //print("Shot");
             collision.gameObject.GetComponent<Robot>().Health -= damage;
+            //print(collision.gameObject.GetComponent<Robot>().Health);
             if(collision.gameObject.GetComponent<Robot>().Health <= 0)
             {
+                if (collision.gameObject.tag == "Player")
+                {
+                    SceneManager.LoadScene("LossScn");
+                }
                 Destroy(collision.gameObject);
             }
         }

@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WirelessTerminal : Robot
 {
-    public GameObject terminalSpark;
-    GameObject createdSpark;
+    [SerializeField]
+    bool LastTerminal=false;
     public Sprite terminalOn;
     public Sprite terminalOff;
     public bool sendingPlayer;
 
 	// Update is called once per frame
-	void Update ()
+	protected override void Update ()
     {
         if (isSelected)
         {
             GetComponent<SpriteRenderer>().sprite = terminalOn;
+            if (LastTerminal)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         else
         {

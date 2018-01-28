@@ -19,6 +19,11 @@ public class CameraTracking : MonoBehaviour
         StartCoroutine(TargetPlayer());
     }
 
+    private void Update()
+    {
+        Audio_Manager.Instance.Update();
+    }
+
     private void FixedUpdate()
     {
         if (target != null)
@@ -38,6 +43,10 @@ public class CameraTracking : MonoBehaviour
             else
             {
                 target = GameObject.FindGameObjectWithTag("Player");
+                if(target == null)
+                {
+                    target = GameObject.Find("Player");
+                }
                 yield return new WaitForSeconds(0.5f);
             }
         }
