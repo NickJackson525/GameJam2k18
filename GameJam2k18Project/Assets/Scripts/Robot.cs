@@ -13,6 +13,17 @@ public class Robot : MonoBehaviour
     protected Rigidbody2D rb;
     Vector2 moveV = new Vector2(0, 3);
 
+    [SerializeField]
+    private List<Transform> pathNodes;
+    [SerializeField]
+    private float pathDistanceTillNext;
+    [SerializeField]
+    private bool pathSnap;
+    [SerializeField]
+    private float pathSpeed = 3f;
+
+    protected int pathIndex = 0;
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -66,6 +77,31 @@ public class Robot : MonoBehaviour
             Destroy(coll.gameObject);
             gameObject.tag = "Player";
             isSelected = true;
+        }
+    }
+
+    protected void FollowPath()
+    {
+        if (pathIndex < pathNodes.Count)
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, pathNodes[pathIndex].position) > pathDistanceTillNext)
+            {
+                Vector3 direction = (pathNodes[pathIndex].position - this.gameObject.transform.position).normalized;
+                rb.AddForce(new Vector2(direction.x, direction.y) * pathSpeed);
+            }
+            else
+            {
+                if (pathSnap)
+                {
+                    this.gameObject.transform.position = pathNodes[pathIndex].position;
+                }
+                rb.velocity = Vector3.zero;
+                pathIndex++;
+            }
+        }
+        else
+        {
+            pathIndex = 0;
         }
     }
 }
