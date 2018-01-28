@@ -26,19 +26,22 @@ public class BattleBotCannon : MonoBehaviour {
         if (inRange)
         {
             GameObject target = GameObject.FindGameObjectWithTag("Player");
-            Vector3 trackDirection = this.gameObject.transform.position - target.transform.position;
-            this.gameObject.transform.localEulerAngles = new Vector3(
-                this.gameObject.transform.localEulerAngles.x,
-                this.gameObject.transform.localEulerAngles.y,
-                Mathf.Atan2(trackDirection.y, trackDirection.x) * 80 - 180);
-            if (fireTime>shootTime)
+            if (target != null)
             {
-                fireTime = 0;
-                Fire();
-            }
-            else
-            {
-                fireTime++;
+                Vector3 trackDirection = this.gameObject.transform.position - target.transform.position;
+                this.gameObject.transform.localEulerAngles = new Vector3(
+                    this.gameObject.transform.localEulerAngles.x,
+                    this.gameObject.transform.localEulerAngles.y,
+                    Mathf.Atan2(trackDirection.y, trackDirection.x) * 80 - 180);
+                if (fireTime > shootTime)
+                {
+                    fireTime = 0;
+                    Fire();
+                }
+                else
+                {
+                    fireTime++;
+                }
             }
         }
     }
