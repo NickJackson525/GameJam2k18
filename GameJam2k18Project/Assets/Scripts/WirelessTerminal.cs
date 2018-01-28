@@ -16,11 +16,11 @@ public class WirelessTerminal : Robot
     {
         if (isSelected)
         {
-            GetComponent<Image>().sprite = terminalOn;
+            GetComponent<SpriteRenderer>().sprite = terminalOn;
         }
         else
         {
-            GetComponent<Image>().sprite = terminalOff;
+            GetComponent<SpriteRenderer>().sprite = terminalOff;
         }
 
         if (isSelected && !sendingPlayer && Input.GetMouseButtonUp(0))
