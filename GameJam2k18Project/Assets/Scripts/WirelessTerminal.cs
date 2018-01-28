@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WirelessTerminal : Robot
 {
+    [SerializeField]
+    bool LastTerminal=false;
     public Sprite terminalOn;
     public Sprite terminalOff;
     public bool sendingPlayer;
@@ -15,6 +18,10 @@ public class WirelessTerminal : Robot
         if (isSelected)
         {
             GetComponent<SpriteRenderer>().sprite = terminalOn;
+            if (LastTerminal)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
         else
         {
