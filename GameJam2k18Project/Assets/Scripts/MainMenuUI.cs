@@ -16,22 +16,25 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if(timer > 0)
+        if (SceneManager.GetActiveScene().name == "Main")
         {
-            timer--;
-
-            if(timer == 0)
+            if (timer > 0)
             {
-                if(background.GetComponent<Image>().sprite == menuBackground1)
-                {
-                    background.GetComponent<Image>().sprite = menuBackground2;
-                }
-                else
-                {
-                    background.GetComponent<Image>().sprite = menuBackground1;
-                }
+                timer--;
 
-                timer = 100;
+                if (timer == 0)
+                {
+                    if (background.GetComponent<Image>().sprite == menuBackground1)
+                    {
+                        background.GetComponent<Image>().sprite = menuBackground2;
+                    }
+                    else
+                    {
+                        background.GetComponent<Image>().sprite = menuBackground1;
+                    }
+
+                    timer = 100;
+                }
             }
         }
 

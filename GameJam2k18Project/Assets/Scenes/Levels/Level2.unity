@@ -159,7 +159,7 @@ Prefab:
     - target: {fileID: 114386337470781466, guid: 132f19450e944804895f41f7d75913c3,
         type: 2}
       propertyPath: aggroDistance
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 132f19450e944804895f41f7d75913c3, type: 2}
@@ -1841,7 +1841,7 @@ Prefab:
     - target: {fileID: 114386337470781466, guid: 132f19450e944804895f41f7d75913c3,
         type: 2}
       propertyPath: aggroDistance
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 132f19450e944804895f41f7d75913c3, type: 2}

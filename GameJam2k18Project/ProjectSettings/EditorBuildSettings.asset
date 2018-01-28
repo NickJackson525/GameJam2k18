@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level3.unity
     guid: 5b9225e313d557347be0edaa4aad5f24
   - enabled: 1
+    path: Assets/Scenes/LogicGame.unity
+    guid: f65d356ade20f784b9666584b24f7973
+  - enabled: 1
     path: Assets/Scenes/WinScn.unity
     guid: ad1ed47b656d8334eac85b7943b752a6
   - enabled: 1

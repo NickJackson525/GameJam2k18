@@ -2046,7 +2046,11 @@ MonoBehaviour:
 
     Space -Turret shooting
 
-    mouse Left Click - transmit to a robot'
+    mouse Left Click - transmit to a robot
+
+    R-Restart level
+
+    Esc-Go back to main menu'
 --- !u!222 &1997282376
 CanvasRenderer:
   m_ObjectHideFlags: 0
