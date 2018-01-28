@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ff7233fcb08f948b648132cc4225bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terminalSpark: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
+    type: 2}
   pathNodes: []
   pathDistanceTillNext: 0
   pathSnap: 0

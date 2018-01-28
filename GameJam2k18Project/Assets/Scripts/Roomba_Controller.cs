@@ -9,11 +9,16 @@ public class Roomba_Controller : Robot
         base.Start();
         speed = 3;
     }
-    private void Update()
+    protected override void Update()
     {
         if (isSelected)
+        {
+            base.Update();
             MoveLeftRight();
+        }
         else
+        {
             FollowPath();
+        }
     }
 }

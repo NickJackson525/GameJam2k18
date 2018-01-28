@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 58213147214967332}
   m_Layer: 5
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Spark
   m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952139250980076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.215681, y: 2.51, z: 0}
+  m_LocalPosition: {x: -6.06, y: -2.2127776, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 4739761090755224}
@@ -136,10 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdb45a1f655839428dc6e7d8b7dea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terminalSpark: {fileID: 1783114416543538, guid: eb2ee54628ac4214382f59d5f1990a94,
+    type: 2}
   pathNodes: []
   pathDistanceTillNext: 0
   pathSnap: 0
   pathSpeed: 3
+  aggroDistance: 5
+  health: 50
 --- !u!198 &198727721945905716
 ParticleSystem:
   m_ObjectHideFlags: 1
